@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Logs
+*.log
+logs/
+
+# Build output
+dist/
+build/
+
+# Environment and key files
+.env
+*.env
+rzp-key.csv
+
+# IDE & System
+.DS_Store
+.vscode/
+.idea/
