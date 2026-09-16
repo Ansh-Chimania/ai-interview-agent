@@ -68,6 +68,11 @@ function Step1SetUp({ onStart }) {
         } catch (error) {
             console.log(error)
             setLoading(false)
+            if (error.response && error.response.status === 401) {
+                alert("Please sign in to start your AI interview.");
+            } else if (error.response && error.response.data && error.response.data.message) {
+                alert(error.response.data.message);
+            }
         }
     }
     return (
@@ -255,7 +260,7 @@ function Step1SetUp({ onStart }) {
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.95 }}
                             className='w-full disabled:bg-gray-600 bg-green-600 hover:bg-green-700 text-white py-3 rounded-full text-lg font-semibold transition duration-300 shadow-md'>
-                            {loading ? "Staring...":"Start Interview"}
+                            {loading ? "Starting...":"Start Interview"}
 
 
                         </motion.button>
